@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/music
+    username: postgres
+    password: 1234
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+  jpa:
+    show_sql: true
+    database: postgresql
+    generate-ddl: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        enable_lazy_load_no_trans: false
+        dialect: com.collection.music.config.CustomPostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+          jdbc:
+            lob:
+              non_contextual_creation: true
+#App Specific configuration
+app:
+  expiration-hours: 24
+  default-sender: tphuongit524@gmail.com
+  activation-url: http://localhost:4200/#/activate/
+  jwt:
+    header: Authorization
+    secret: mySecret
+    expiration: 604800
+    route-authentication-path: /auth/login
+    route-authentication-refresh: /auth/refresh
+    route-authentication-registration: /auth/registration
+  otp-expiration: 5
+  upload-folder: ./src/main/resources/static/images/
+  

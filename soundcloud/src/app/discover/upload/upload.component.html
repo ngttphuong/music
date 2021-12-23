@@ -1,0 +1,131 @@
+
+    <div class="container">
+          <div class="header">
+           <div class="menu"></div>
+<!--
+            <div id="slider">
+                <figure>
+                     <img class="mySlides" src="image/footer-background1.jpg" alt="">
+                </figure>
+            </div>
+-->
+             <div class="account">
+                <div>
+                     <a routerLink="/sign-up" class="c">Create account</a>
+                     <a routerLink="/sign-in">Sign in</a>
+                 </div>
+             </div>
+             <div>
+                <input type="checkbox" id="slide" name="" value="" class="hidden"/>
+                   <div class="con">
+                   <label for="slide" class="toggle">
+                    <div class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                     </div>
+                   </label>
+                  <div class="sidebar"> 
+                        <a router-link="/discover"> Home </a>
+                        <a href="#"> Charts </a>
+                        <a href="#"> Blogs </a>
+                        <a href="about.html"> About us </a>
+                        <a href="contact.html"> Contact us </a>
+                  </div>  
+                  <div class="maintext">
+                    <div id="continput">
+                        <div id="input-group">
+                           <form action="">
+                                <input type="text" id="searchtext" placeholder="Search...">
+                                <button id="icon-src"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                        <a routerLink="/upload">Upload</a>
+                    </div>
+                 </div>
+               </div>          
+             </div>
+         </div>
+         <div class="bottom">
+            <div class="upload">
+              <div class="uptrack">
+               <div class="track">
+                    <h2>Upload your tracks</h2>
+                    <div class="file">
+                        
+						<div id="yourBtn" class="up-btn" onclick="uploadFile()">Choose a file to upload</div>
+                        <script>
+							 function sub(obj){
+								var file = obj.value;
+								var fileName = file.split("\\");
+								document.getElementById("yourBtn").innerHTML = fileName[fileName.length-1];
+							  }
+						</script>
+                    </div>
+                </div>
+                <div class="meta">
+                    <div class="process">
+                    	<div class="bar"></div >
+       					<div class="percent">0%</div >
+                    </div>
+                    <div class="up-img">
+                            <img id="imageSong" src="image/default-upload-image.jpg" alt="">
+                            
+                            <div>
+                                <div id="btn-image" type="submit" onclick="uploadImage()">&#xf147; <span>Update Image</span></div>
+                            </div>
+                    </div>
+                   <form action="">
+                    <div class="infometa">
+                       
+                           <label for="">Title</label>
+                           <input type="text" id="title" name="title">
+                       
+                           <label for="">Vocals</label>
+                           <input type="text" id="link" name="link">
+                      
+                           <label for="">Tags</label>
+                           <select name="tags" id="">
+                           		<option value="">Dance</option>
+                           		<option value="">Jazz</option>
+                           		<option value="">Indie</option>
+                           		<option value="" selected>--Choose a tags--</option>
+                           </select>
+                      
+                           <label for="">Description</label>
+                           <textarea name="" id="" cols="30" rows="5"></textarea>
+							
+                   			<input type="file" name="audio[]" id="upfile" accept="audio/x-mpeg" required="" onchange="sub(this)" hidden>
+							<input type="file" name="image" id="upimage" onchange="readURL(this);" accept="image/jpeg, image/png, image/jpg" hidden/>
+                    </div>
+                    <input type="submit" value="Upload">
+                    </form>
+                </div>
+				 </div>
+              <div class="im">
+                <p>Important: By sharing, you confirm that your sounds comply with our Terms of use and you don’t infringe anyone else’s rights. If in doubt, check our Copyright information pages and FAQs before uploading.</p>
+                <p>Problems uploading? Please <a href="contact.html">contact us</a></p>
+                <p>What types of files can I upload? You can upload AIFF, WAVE (WAV), FLAC, ALAC, OGG, MP2, MP3, AAC, AMR, and WMA files. The maximum file size is 5GB.</p>
+            </div>
+            </div>
+         </div>
+         <div class="footer">
+             <div class="social">
+              <p class="site"><u>Site map</u></p>
+              <div class="sitemap">
+                  <a ro>Home</a>
+                  <a href="about.html">About us</a>
+                  <a href="contact.html">Contact us</a>
+                  <a href="">Blogs</a>
+                  <a href="">Charts</a>
+                  <a href="">Sign in</a>
+              </div>
+               <div class="both">
+                <a href="https://www.facebook.com/quocvo.it"><div class="icon facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></div></a>
+                <a href="#"><div class="icon twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></div></a>
+                <a href="https://www.instagram.com/empty_0509/"><div class="icon instagram"><i class="fa fa-instagram" aria-hidden="true"></i></div></a>
+                </div>
+                <p>@2017 VNQ Design & Development</p>
+            </div>
+        </div>
+    </div>

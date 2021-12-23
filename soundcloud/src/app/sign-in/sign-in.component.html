@@ -1,0 +1,98 @@
+
+    <div class="container">
+          <div class="header">
+           <div class="menu"></div>
+<!--
+            <div id="slider">
+                <figure>
+                     <img class="mySlides" src="image/footer-background1.jpg" alt="">
+                </figure>
+            </div>
+-->
+             <div class="account">
+                <div>
+                     <a routerLink="/sign-up" class="c">Create account</a>
+                     <a href="#">Sign in</a>
+                 </div>
+             </div>
+             <div>
+                <input type="checkbox" id="slide" name="" value="" class="hidden"/>
+                   <div class="con">
+                   <label for="slide" class="toggle">
+                    <div class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                     </div>
+                   </label>
+                  <div class="sidebar"> 
+                        <a routerLink="/discover"> Home </a>
+                        <a href="#"> Charts </a>
+                        <a href="#"> Blogs </a>
+                        <a href="about.html"> About us </a>
+                        <a href="contact.html"> Contact us </a>
+                  </div>  
+                  <div class="maintext">
+                    <div id="continput">
+                        <div id="input-group">
+                           <form action="">
+                                <input type="text" id="searchtext" placeholder="Search...">
+                                <button id="icon-src"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                        <a routerLink="/upload">Upload</a>
+                    </div>
+                 </div>
+               </div>          
+             </div>
+         </div>
+         <div class="bottom">
+               <div class="sign-create" id="sig-cre">
+                 <form id="signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                     <div class="rect"><div>Sign in</div></div>
+                     <div class="btn-social">
+                         <button class="btn-facebook"><i class="fa fa-facebook" aria-hidden="true"><div>Signin with facebook</div></i></button>
+                         <button class="btn-twitter"><i class="fa fa-twitter" aria-hidden="true"><div>Signin with twitter</div></i></button>
+                     </div>
+                     <div class="cs">
+                        <label for="retype">Username</label>
+                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                           <div *ngIf="f.username.errors.required">Username is required</div>
+                       </div>
+                         <label for="pass">Password</label>
+                         <input type="password" id="pass" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </div>
+                         <!-- <a href="" class="forgot">Forgot Passwords?</a> -->
+                         <!-- <input type="checkbox" id="remember" placeholder=""><span>Remember me</span> -->
+                         <button [disabled]="loading" class="btn btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Login
+                        </button>
+                         <p class="mes">You don't have an account? <a routerLink="/sign-up">Create account</a></p>
+                     </div>
+                 </form>
+             </div>
+         </div>
+         <div class="footer">
+             <div class="social">
+              <p class="site"><u>Site map</u></p>
+              <div class="sitemap">
+                  <a routerLink="/discover">Home</a>
+                  <a href="about.html">About us</a>
+                  <a href="contact.html">Contact us</a>
+                  <a href="">Blogs</a>
+                  <a href="">Charts</a>
+                  <a href="">Sign in</a>
+              </div>
+               <div class="both">
+                <a href="https://www.facebook.com/quocvo.it"><div class="icon facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></div></a>
+                <a href="#"><div class="icon twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></div></a>
+                <a href="https://www.instagram.com/empty_0509/"><div class="icon instagram"><i class="fa fa-instagram" aria-hidden="true"></i></div></a>
+                </div>
+                <p>@2017 VNQ Design & Development</p>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,16 @@
+@font-face{
+    font-family: boldcond;
+    src: url('font/MYRIADPRO-BOLDCOND.OTF');
+}
+@font-face{
+    font-family: cond;
+    src: url('font/MYRIADPRO-COND.OTF');
+}
+@font-face{
+    font-family: segoelight;
+    src: url('font/segoeuil.TTF');
+}
+@font-face{
+    font-family: regular;
+    src: url('font/MYRIADPRO-REGULAR.OTF');
+}

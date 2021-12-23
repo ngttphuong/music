@@ -1,0 +1,295 @@
+    <div class= "container" >
+     <div class="header">
+        <div id="slider">
+            <figure>
+                 <img class="mySlides" src="assets/images/header-background.jpg" alt="">
+                 <img class="mySlides" src="assets/images/header-background4.jpg" alt="">
+                 <img class="mySlides" src="assets/images/header-background3.jpg" alt="">
+                 <img class="mySlides" src="assets/images/header-background5.jpg" alt="">
+                 <img class="mySlides" src="assets/images/header-background.jpg" alt="">
+            </figure>
+        </div>
+         <div class="account">
+
+            <div *ngIf="!isActived" class="notlogin">
+                 <a href="createaccount.html" class="c">Create account</a>
+                 <a href="login.html" class="s">Sign in</a>
+            </div>
+
+             <div *ngIf="isActived" class="acclogin">
+                 <div class="imgacc"><img src="assets/images/acc.jpg" alt=""></div>
+                 <div class="accname"><p>{{accountName}}</p></div>
+                 <div class="navi">
+                     <input type="checkbox" id="menuacc" name="" value="" class="hidden"/>
+                     <div class="a">
+                        <div class="o">
+                         <label for="menuacc" class=""><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
+                        </div>
+                         <div class="navacc">
+                             <a routerLink="/profile"><i class="fa fa-user-circle"></i> Profile</a>
+                             <a routerLink="/profile/track"><i class="fa fa-music" aria-hidden="true"></i> Track</a>
+                             <a href=""><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
+                             <a (click)="signOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div>
+            <input type="checkbox" id="slide" name="" value="" class="hidden"/>
+               <div class="con">
+               <label id="toggle" for="slide" class="toggle">
+                <div id="nav" class="nav">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                 </div>
+               </label>
+              <div id="sidebar" class="sidebar"> 
+                    <a href="index.html"> Home </a>
+                    <a href="chart.html"> Charts </a>
+                    <a href="#"> Blogs </a>
+                    <a href="about.html"> About us </a>
+                    <a href="contact.html"> Contact us </a>
+              </div>  
+       		</div> 
+         </div>
+         <div class="maintext">
+             <p>Play your Music, Feel your Beat</p>
+             	<div id="continput">
+		            <div id="input-group">
+                       <form action="">
+                            <input type="text" id="searchtext" placeholder="Search...">
+                            <button id="icon-src"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+		            </div>
+	            </div>
+             <br>
+             <a routerLink="upload">Upload</a>
+         </div>
+     </div>
+     <div class="bottom">
+         <div class="grid">
+            <div class="head"><a href="" class="headtext">Popullar Songs</a></div>
+            <ul>
+                <li>
+                    <div>
+                        <img src="assets/images/1.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>This Town</p></a>
+                    <a href=""><span>Niall Horan</span></a>
+                </li>
+                 <li>
+                    <div>
+                        <img src="assets/images/2.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>Closer</p></a>
+                    <a href=""><span>The Chainsmokers</span></a>
+                </li>
+                 <li>
+                    <div>
+                        <img src="assets/images/3.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>Say You Won't Let Go</p></a>
+                    <a href=""><span>James Arthur</span></a>
+                </li>
+                 <li>
+                    <div>
+                        <img src="assets/images/4.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>Scars To You Beautiful </p></a>
+                    <a href=""><span>Alessia Cara</span></a>
+                </li>
+                 <li>
+                    <div>
+                        <img src="assets/images/5.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>Don't Wanna Know </p></a>
+                    <a href=""><span>Maroon5 ft Kendrick Lamar</span></a>
+                </li> <li>
+                    <div>
+                        <img src="assets/images/6.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>All We Know </p></a>
+                    <a href=""><span>The Chainsmokers ft Phoebe Ryan</span></a>
+                </li>
+                 <li>
+                    <div>
+                        <img src="assets/images/7.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>Shape Of You </p></a>
+                    <a href=""><span>Ed Sheeran</span></a>
+                </li>
+                 <li>
+                    <div>
+                        <img src="assets/images/8.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>Bad Things </p></a>
+                    <a href=""><span>Machine Gun Kelly ft Camila Cabello</span></a>
+                </li>
+                 <li>
+                    <div>
+                        <img src="assets/images/9.jpg" alt="">
+                        <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                        <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                    </div>
+                    <a href=""><p>Cold Water </p></a>
+                    <a href=""><span>Major Lazer ft Justin Bieber, MO</span></a>
+                </li>
+                 <li>
+                    <div>
+                        <img src="assets/images/10.jpg" alt="">
+                        <div class="nai">
+                            <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <button class="heart"><i class="fa fa-heartbeat" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <a href=""><p>Paris </p></a>
+                    <a href=""><span>The Chainsmokers</span></a>
+                </li>
+            </ul>
+         </div>
+     </div>
+     <div class="album">
+         <img src="assets/images/dics.png" alt="" class="dics">
+         <img src="assets/images/header-background2.jpg" alt="" class="backgr">
+         <div>
+         <h2>Album Divide is avaiable!</h2>
+         <p>"Castle on the Hill" and "Shape of You", the album's lead singles, were issued on 6 January 2017. Sheeran teased the tracks on social media during the week leading up to their release, posting instrumental extracts and each song's opening lyric.</p>
+         <a href="">Purchase</a>
+         </div>
+     </div>
+     <div class="tags">
+        <div class="playlist">
+            <div class="div">
+               <select name="" id="">
+                    <option value="">Acoustic</option>
+                    <option value="">Deep House</option>
+                    <option value="">Rock</option>
+                    <option value="">Jazz</option>
+                    <option value="">Indie</option>
+                </select>
+            </div>
+            <div class="subplaylist" id="play1">
+                <div class="sub 1"><a href=""><img src="assets/images/sub1.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 2"><a href=""><img src="assets/images/sub2.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 3"><a href=""><img src="assets/images/sub3.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 4"><a href=""><img src="assets/images/sub4.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 5"><a href=""><img src="assets/images/sub5.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 6"><a href=""><img src="assets/images/sub6.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 7"><a href=""><img src="assets/images/sub7.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 8"><a href=""><img src="assets/images/sub8.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="subplaylist" id="play2">
+                <div class="sub 9"><a href=""><img src="assets/images/sub9.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 10"><a href=""><img src="assets/images/sub10.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 11"><a href=""><img src="assets/images/sub11.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 12"><a href=""><img src="assets/images/sub12.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 13"><a href=""><img src="assets/images/sub13.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 14"><a href=""><img src="assets/images/sub14.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 15"><a href=""><img src="assets/images/sub15.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 16"><a href=""><img src="assets/images/sub16.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="subplaylist" id="play3">
+                <div class="sub 16"><a href=""><img src="assets/images/sub17.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 16"><a href=""><img src="assets/images/sub18.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 16"><a href=""><img src="assets/images/sub19.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 16"><a href=""><img src="assets/images/sub20.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+                <div class="sub 16"><a href=""><img src="assets/images/sub21.jpg" alt=""></a>
+                    <button class="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="page">
+                <button class="demo" id="but1" onclick="currentDiv(1)">1</button>
+                <button class="demo" onclick="currentDiv(2)">2</button>
+                <button class="demo" onclick="currentDiv(3)">3</button>        
+            </div>
+        </div>
+        <div class="alltag">
+             <div class="div"><a href="" class="title">Tags </a></div>
+             <div class="tag 1"><a href=""><img src="assets/images/taba.jpg" alt=""></a>
+             <a href="" class="enter"><i class="fa fa-sort-asc" aria-hidden="true"></i></a></div>
+             <div class="tag 2"><a href=""><img src="assets/images/tabb.jpg" alt=""></a>
+             <a href="" class="enter"><i class="fa fa-sort-asc" aria-hidden="true"></i></a></div>
+             <div class="tag 3"><a href=""><img src="assets/images/tabc.jpg" alt=""></a>
+             <a href="" class="enter"><i class="fa fa-sort-asc" aria-hidden="true"></i></a></div>
+             <div class="tag 4"><a href=""><img src="assets/images/tabd.jpg" alt=""></a>
+             <a href="" class="enter"><i class="fa fa-sort-asc" aria-hidden="true"></i></a></div>
+         </div>
+     </div>
+     <div class="footer">
+         <div class="social">
+          <p class="site"><u>Site map</u></p>
+          <div class="sitemap">
+              <a href="">Home</a>
+              <a href="about.html">About us</a>
+              <a href="contact.html">Contact us</a>
+              <a href="">Blogs</a>
+              <a href="">Charts</a>
+              <a href="">Sign in</a>
+          </div>
+           <div class="both">
+            <a href="https://www.facebook.com/quocvo.it"><div class="icon facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></div></a>
+            <a href="#"><div class="icon twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></div></a>
+            <a href="https://www.instagram.com/empty_0509/"><div class="icon instagram"><i class="fa fa-instagram" aria-hidden="true"></i></div></a>
+            </div>
+            <p>@2017 VNQ Design & Development</p>
+        </div>
+    </div>
+

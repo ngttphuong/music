@@ -1,0 +1,62 @@
+@media screen and (max-width: 1920px){
+    .header .maintext a{
+        margin-left: -3em;
+    }
+}
+@media screen and (max-width: 1365px){
+    .container{
+        width: 1366px;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 1280px){
+    .container{
+        width: 1280px;
+        margin: 0;
+    }
+    #slide:checked + .con .nav {
+        left: 250px;
+    }
+     #slide:checked + .con #input-group{
+        left: 310px;
+    }
+    #slide:checked + .con .maintext a{
+        left: 770px;
+    }
+    .bottom .team .person{
+        width: 19em;
+    }
+    .bottom .team .person .shape{
+        width: 15em;
+        height: 15em;
+    }
+}
+@media screen and (max-width: 1024px){
+    .container{
+        width: 1024px;
+        margin: 0;
+    }
+    #slide:checked + .con .nav {
+        left: 250px;
+    }
+     #slide:checked + .con #input-group{
+        left: 310px;
+    }
+    #slide:checked + .con .maintext a{
+        left: 770px;
+    }
+    .album div{
+        top: 70%;
+        left: 50%;
+    }
+    .album .dics{
+        top: 40%;
+    }
+    .bottom .team .person{
+        width: 15em;
+    }
+    .bottom .team .person .shape{
+        width: 10em;
+        height: 10em;
+    }
+}
