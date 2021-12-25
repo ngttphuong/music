@@ -24,6 +24,10 @@ spring:
           jdbc:
             lob:
               non_contextual_creation: true
+  servlet:
+   multipart:
+     max-file-size: 500MB
+     max-request-size: 500MB             
 #App Specific configuration
 app:
   expiration-hours: 24
@@ -37,5 +41,5 @@ app:
     route-authentication-refresh: /auth/refresh
     route-authentication-registration: /auth/registration
   otp-expiration: 5
-  upload-folder: ./src/main/resources/static/images/
+  upload-folder: C:\PHUONG\music\data\
   

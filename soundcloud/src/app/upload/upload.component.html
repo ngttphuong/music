@@ -2,18 +2,29 @@
     <div class="container">
           <div class="header">
            <div class="menu"></div>
-<!--
-            <div id="slider">
-                <figure>
-                     <img class="mySlides" src="image/footer-background1.jpg" alt="">
-                </figure>
-            </div>
--->
              <div class="account">
-                <div>
+                <div  *ngIf="!isActived">
                      <a routerLink="/sign-up" class="c">Create account</a>
                      <a routerLink="/sign-in">Sign in</a>
                  </div>
+                 <div *ngIf="isActived" class="acclogin">
+                    <div class="imgacc"><img src="assets/images/acc.jpg" alt=""></div>
+                    <div class="accname"><p>{{accountName}}</p></div>
+                    <div class="navi">
+                        <input type="checkbox" id="menuacc" name="" value="" class="hidden"/>
+                        <div class="a">
+                           <div class="o">
+                            <label for="menuacc" class=""><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
+                           </div>
+                            <div class="navacc">
+                                <a routerLink="/profile"><i class="fa fa-user-circle"></i> Profile</a>
+                                <a routerLink="/profile/track"><i class="fa fa-music" aria-hidden="true"></i> Track</a>
+                                <a href=""><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
+                                <a (click)="signOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
              </div>
              <div>
                 <input type="checkbox" id="slide" name="" value="" class="hidden"/>
@@ -46,61 +57,143 @@
                </div>          
              </div>
          </div>
-         <div class="bottom">
+         <div *ngIf="!isActived" class="bottom">
             <div class="upload">
                <div class="guide">
-                <div><h2>Three step to Upload your track</h2></div>
-                <div><h4>Create an account to get started</h4></div>
-                <div class="step">
-                    <div class="s">
-                        <div><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-                        <h3>Create your account</h3>
-                        <p>Join with us to connect the world</p>
+                    <div><h2>Three step to Upload your track</h2></div>
+                    <div><h4>Create an account to get started</h4></div>
+                    <div class="step">
+                        <div class="s">
+                            <div><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+                            <h3>Create your account</h3>
+                            <p>Join with us to connect the world</p>
+                        </div>
+                        <div class="s">
+                            <div><i class="fa fa-music" aria-hidden="true"></i></div>
+                            <h3>Upload your tracks</h3>
+                            <p>Enjoy 3 hours of space for your uploads, enough for multiple albums</p>
+                        </div>
+                        <div class="s">
+                            <div><i class="fa fa-share-square-o" aria-hidden="true"></i></div>
+                            <h3>Share your tracks</h3>
+                            <p>Easily share music on Facebook, Twitter, Tumblr, and the entire web</p>
+                        </div>
                     </div>
-                    <div class="s">
-                        <div><i class="fa fa-music" aria-hidden="true"></i></div>
-                        <h3>Upload your tracks</h3>
-                        <p>Enjoy 3 hours of space for your uploads, enough for multiple albums</p>
-                    </div>
-                    <div class="s">
-                        <div><i class="fa fa-share-square-o" aria-hidden="true"></i></div>
-                        <h3>Share your tracks</h3>
-                        <p>Easily share music on Facebook, Twitter, Tumblr, and the entire web</p>
-                    </div>
-                </div>
-                <div class="btn">
-                    <div class="account">
+                    <div class="btn">
+                        <div class="account">
 
-                         <a routerLink="/sign-up" class="c" id="c" >Create account</a>
-                         <a routerLink="/sign-in" class="c" id="s" >Sign in</a>
-                     </div>
+                            <a routerLink="/sign-up" class="c" id="c" >Create account</a>
+                            <a routerLink="/sign-in" class="c" id="s" >Sign in</a>
+                        </div>
+                    </div>
+                    <div class="look"><h5>Looking for the best analytics and unlimited uploads? <a href="">Check out your account</a></h5></div>
                 </div>
-                <div class="look"><h5>Looking for the best analytics and unlimited uploads? <a href="">Check out your account</a></h5></div>
-            </div>
-            <div class="im">
-                <p>Important: By sharing, you confirm that your sounds comply with our Terms of use and you don’t infringe anyone else’s rights. If in doubt, check our Copyright information pages and FAQs before uploading.</p>
-                <p>Problems uploading? Please <a href="contact.html">contact us</a></p>
-                <p>What types of files can I upload? You can upload AIFF, WAVE (WAV), FLAC, ALAC, OGG, MP2, MP3, AAC, AMR, and WMA files. The maximum file size is 5GB.</p>
-            </div>
-        </div>      
-         </div>
-         <div class="footer">
-             <div class="social">
-              <p class="site"><u>Site map</u></p>
-              <div class="sitemap">
-                  <a routerLink="/discover">Home</a>
-                  <a href="about.html">About us</a>
-                  <a href="contact.html">Contact us</a>
-                  <a href="">Blogs</a>
-                  <a href="">Charts</a>
-                  <a href="">Sign in</a>
-              </div>
-               <div class="both">
-                <a href="https://www.facebook.com/quocvo.it"><div class="icon facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></div></a>
-                <a href="#"><div class="icon twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></div></a>
-                <a href="https://www.instagram.com/empty_0509/"><div class="icon instagram"><i class="fa fa-instagram" aria-hidden="true"></i></div></a>
+                <div class="im">
+                    <p>Important: By sharing, you confirm that your sounds comply with our Terms of use and you don’t infringe anyone else’s rights. If in doubt, check our Copyright information pages and FAQs before uploading.</p>
+                    <p>Problems uploading? Please <a href="contact.html">contact us</a></p>
+                    <p>What types of files can I upload? You can upload AIFF, WAVE (WAV), FLAC, ALAC, OGG, MP2, MP3, AAC, AMR, and WMA files. The maximum file size is 5GB.</p>
                 </div>
-                <p>@2017 VNQ Design & Development</p>
             </div>
         </div>
-    </div>
+        <div *ngIf="isActived" class="bottom">
+            <div class="upload">
+                <div class="uptrack">
+                    <div class="track">
+                        <h2>Upload your tracks</h2>
+                        <!-- <div class="file">
+                            <div id="yourBtn" class="up-btn" onclick="uploadFile()">Choose a file to upload</div>
+                        </div> -->
+                        <div>
+                            <label for="upfile"> Choose a file to upload</label>
+                            <input type="file" id="upfile" accept="audio/x-mpeg"  (change)="handleFile($event)">
+                        </div>
+                    </div>
+                    <div *ngIf="currentFile" class="progress my-3">
+                        <video [src]="url" *ngIf="url" height="200" controls></video> <br/>
+                        <div
+                        class="progress-bar progress-bar-info progress-bar-striped"
+                        role="progressbar"
+                        attr.aria-valuenow="{{ progress }}"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        [ngStyle]="{ width: progress + '%' }"
+                        >
+                        {{ progress }}%
+                    </div>
+                </div>
+                <div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>
+                
+                <div class="card mt-3">
+                    <div class="card-header">List of Files</div>
+                    <ul class="list-group list-group-flush" *ngFor="let file of selectedFiles | async">
+                        <li class="list-group-item">
+                            <a href="{{ currentFile?.name }}">{{ currentFile?.name }}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="meta">
+                    <div class="process">
+                        <div class="bar"></div >
+                            <div class="percent">0%</div >
+                            </div>
+                            <div class="col-md-12" style="display: flex;">
+                                <div class="up-img col-md-6">
+                                    <img id="imageSong" src="assets/images/default-upload-image.jpg" alt="">
+                                    
+                                    <div>
+                                        <label for="file">>Update Image</label>
+                                        <!-- <div id="btn-image" type="submit" onclick="uploadImage()">&#xf147; <span>Update Image</span></div> -->
+                                        <input type="file" name="image" id="upimage" (change)="handleFileImage($event)" accept="image/jpeg, image/png, image/jpg"/>
+                                    </div>
+                                </div>
+                                <form [formGroup]="form" (ngSubmit)="submit()">
+
+                                <div class="infometa col-md-6 " >
+                                    <label for="">Title</label>
+                                    <input type="text" formControlName="title" id="title">
+                                    <label for="">Vocals</label>
+                                    <label for="">Tags</label>
+                                    <select formControlName="tag">
+                                            <option value="DANCE">Dance</option>
+                                            <option value="JAZZ">Jazz</option>
+                                            <option value="INDIE">Indie</option>
+                                            <option value="" selected>--Choose a tags--</option>
+                                    </select>
+                                    <label for="">Description</label>
+                                    <textarea formControlName="description" id="" cols="30" rows="5"></textarea>
+                                    <!-- <input type="file" name="audio[]" id="upfile" accept="audio/x-mpeg" required="" onchange="sub(this)" hidden> -->
+                                    <!-- <input type="file" name="image" id="upimage" onchange="readURL(this);" accept="image/jpeg, image/png, image/jpg" hidden/> -->
+                                    <input type="submit" value="Upload">
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                <div class="im">
+                        <p>Important: By sharing, you confirm that your sounds comply with our Terms of use and you don’t infringe anyone else’s rights. If in doubt, check our Copyright information pages and FAQs before uploading.</p>
+                        <p>Problems uploading? Please <a href="contact.html">contact us</a></p>
+                        <p>What types of files can I upload? You can upload AIFF, WAVE (WAV), FLAC, ALAC, OGG, MP2, MP3, AAC, AMR, and WMA files. The maximum file size is 5GB.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="social">
+                <p class="site"><u>Site map</u></p>
+                <div class="sitemap">
+                    <a routerLink="/discover">Home</a>
+                    <a href="about.html">About us</a>
+                    <a href="contact.html">Contact us</a>
+                    <a href="">Blogs</a>
+                    <a href="">Charts</a>
+                    <a href="">Sign in</a>
+                </div>
+                <div class="both">
+                    <a href=""><div class="icon facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></div></a>
+                    <a href="#"><div class="icon twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></div></a>
+                    <a href="https://www.instagram.com/thoaiho2/"><div class="icon instagram"><i class="fa fa-instagram" aria-hidden="true"></i></div></a>
+                </div>
+                <p>@2021 TP Design & Development</p>
+            </div>
+        </div>
+    </div>      
+    

@@ -8,12 +8,14 @@ import { DiscoverComponent } from "./discover.component";
 import { ProfileModule } from "./profile/profile.module";
 import { UploadModule } from "./upload/upload.module";
 import { RouterModule } from '@angular/router';
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     imports: [
         UploadModule,
         ProfileModule,
-        RouterModule
+        RouterModule,
+        CommonModule
     ],
     providers: [ GuardService, ApiService, JwtService, AuthService, FileService],
     declarations: [DiscoverComponent],

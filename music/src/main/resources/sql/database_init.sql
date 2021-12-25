@@ -18,14 +18,13 @@ url_image varchar(255),
 
 create table song(
 song_id serial  not null constraint song_id_pk primary key ,
-album_id int not null,
+album_id int,
 user_id int not null,
 song_name varchar(100),
 singer_name varchar(50),
 url_image varchar(255),
 url_link varchar(255),
 like_count  varchar(255),
-constraint album_id_song_fk FOREIGN KEY (album_id) references album(album_id),
 constraint user_id_song_fk FOREIGN KEY (user_id) references "user"(user_id)
 )
 create table comment(

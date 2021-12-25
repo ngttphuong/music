@@ -70,7 +70,7 @@ public class Song {
 		this.urlLink = urlLink;
 	}
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="album_id", nullable=false)
+    @JoinColumn(name="album_id",nullable = true)
 	public Album getAlbum() {
 		return album;
 	}

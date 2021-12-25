@@ -4,6 +4,6 @@ public interface ControllerConstants {
 	String PROFILES = "profiles";
 	String ALBUMS = "albums";
 	String SONGS = "songs";
-	String UPLOAD = "upload";
+	String FILESTORAGE = "file-storage";
 
 }
