@@ -1,6 +1,5 @@
 package com.collection.music.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +9,7 @@ public class UserDto {
 	private String username;
 	private Boolean gender;
 	private String address;
+	private String phoneNumber;
 	private String avatar;
 	private int like;
 }

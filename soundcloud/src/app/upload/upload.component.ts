@@ -17,9 +17,8 @@ export class UploadComponent implements OnInit {
   accountId: any = localStorage.getItem(localStorageName.accountId);
 isActived: boolean = false;
 form = new FormGroup({
-  name: new FormControl('', [Validators.required]),
-  fileImage: new FormControl('', [Validators.required]),
-  fileSource: new FormControl('', [Validators.required]),
+  fileImage: new FormControl(null),
+  fileSong: new FormControl(null),
   title: new FormControl('', [Validators.required]),
   tag: new FormControl('', [Validators.required]),
   description: new FormControl('', [Validators.required]),
@@ -51,14 +50,34 @@ selectedFiles?: FileList;
 
       if (file) {
         this.currentFile = file;
+        this.form.patchValue({
+          fileSong: file
+        });
+        this.form.get('fileSong')?.updateValueAndValidity();
+        // this.uploadService.uploadFile(this.currentFile, this.accountId).subscribe(
+        //   (event: any) => {
+        //     if (event.type === HttpEventType.UploadProgress) {
+        //       this.progress = Math.round(100 * event.loaded / event.total);
+        //     } else if (event instanceof HttpResponse) {
+        //       this.message = event.body.message;
+        //     }
+        //   },
+        //   (err: any) => {
+        //     console.log(err);
+        //     this.progress = 0;
 
-        // var reader = new FileReader();
-        // reader.readAsDataURL(file);
-        // reader.onload = (event) => {
-        //   this.url = (<FileReader>event.target).result;
-        // }
+        //     if (err.error && err.error.message) {
+        //       this.message = err.error.message;
+        //     } else {
+        //       this.message = 'Could not upload the file!';
+        //     }
+
+        //     this.currentFile = undefined;
+        //   });
 
       }
+
+      this.selectedFiles = undefined;
     }
     
   }
@@ -68,30 +87,30 @@ selectedFiles?: FileList;
       this.form.patchValue({
         fileImage: file
       });
+      this.form.get('fileImage')?.updateValueAndValidity();
+      var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (event) => {
+          this.url = (<FileReader>event.target).result;
+        }
     }
   }
 
   submit(){
-  //   this.uploadService.uploadFileSong(this.form.value).subscribe(event =>{
-  //     if (event.type === HttpEventType.UploadProgress) {
-  //       if(event.total)
-  //         this.progress = Math.round(100 * event.loaded / event.total);
-  //     } else if (event instanceof HttpResponse) {
-  //       this.message = event.body.message;
-  //       this.fileInfos = this.uploadService.getFiles();
-  //     }
-  //   },
-  //   (err: any) => {
-  //     console.log(err);
-  //     this.progress = 0;
-  //     if (err.error && err.error.message) {
-  //       this.message = err.error.message;
-  //     } else {
-  //       this.message = 'Could not upload the file!';
-  //     }
+    this.uploadService.uploadFileSong(this.form.value, this.accountId).subscribe(event =>{
+      const path = '/a/' + this.accountName + '/song';
+      this.router.navigate([path], { relativeTo: this.route });
+    },
+    (err: any) => {
+      console.log(err);
+      if (err.error && err.error.message) {
+        this.message = err.error.message;
+      } else {
+        this.message = 'Could not upload the file!';
+      }
 
-  //     this.currentFile = undefined;
-  //   });
+      this.currentFile = undefined;
+    });
   }
 }
 

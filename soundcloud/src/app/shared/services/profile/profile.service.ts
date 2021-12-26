@@ -16,6 +16,18 @@ export class ProfileService {
     }
 
     getProfile(id : number):Observable<Account>{
-        return this.http.get<Account>( env.apiUrl + `/profile/${id}`);
+        return this.http.get<Account>( env.apiUrl + `/profiles/${id}`);
+    }
+    updateProfile(data: any, accountId : number): any{
+        const formData:FormData  = new FormData();
+        formData.append("username", data.username);
+        formData.append("phoneNumber", data.phoneNumber);
+        formData.append("address", data.address);
+        formData.append("gender", data.gender);
+        formData.append("avatar", data.avatar);
+        return this.http.put<any>( env.apiUrl + `/profiles/${accountId}`, formData);
+    }
+    loadFile(fileName : string):Observable<any>{
+        return this.http.get<any>(env.apiUrl + `/file-storage/${fileName}`);
     }
 }

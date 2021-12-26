@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter @Setter
 public class SongDto {
 	private long userId;
-	private String songName;
+	private String title;
 	private String singerName;
 	private String urlImage;
 	private String urlLink;

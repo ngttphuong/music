@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.collection.music.enums.Tag;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -23,13 +27,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Song {
 	private long id;
-	private String songName;
-	private String singerName;
+	private String title;
+	private String desciption;
 	private String urlImage;
 	private String urlLink;
 	private int like;
 	private Album album;
 	private User user;
+	private Tag tag;
 	private Set<Comment> comments = new HashSet<Comment>(0);;
 	
 	@Id
@@ -41,19 +46,19 @@ public class Song {
 	public void setId(long id) {
 		this.id = id;
 	}
-	@Column(name="song_name")
-	public String getSongName() {
-		return songName;
+	@Column(name="title")
+	public String getTitle() {
+		return title;
 	}
-	public void setSongName(String songName) {
-		this.songName = songName;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	@Column(name="singer_name")
-	public String getSingerName() {
-		return singerName;
+	@Column(name="desciption")
+	public String getDesciption() {
+		return desciption;
 	}
-	public void setSingerName(String singerName) {
-		this.singerName = singerName;
+	public void setDesciption(String desciption) {
+		this.desciption = desciption;
 	}
 	@Column(name="url_image")
 	public String getUrlImage() {
@@ -98,6 +103,14 @@ public class Song {
 	}
 	public void setLike(int like) {
 		this.like = like;
+	}
+	@Column(name="tag")
+    @Enumerated(EnumType.STRING)
+	public Tag getTag() {
+		return tag;
+	}
+	public void setTag(Tag tag) {
+		this.tag = tag;
 	}
 	
 }

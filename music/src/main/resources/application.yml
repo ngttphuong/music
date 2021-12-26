@@ -41,5 +41,6 @@ app:
     route-authentication-refresh: /auth/refresh
     route-authentication-registration: /auth/registration
   otp-expiration: 5
-  upload-folder: C:\PHUONG\music\data\
+  upload-folder: C:\PHUONG\music\soundcloud\src\assets\data\
+  upload-folder-images: C:\PHUONG\music\soundcloud\src\assets\images\
   

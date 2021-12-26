@@ -17,7 +17,7 @@
                             <label for="menuacc" class=""><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
                            </div>
                             <div class="navacc">
-                                <a routerLink="/profile"><i class="fa fa-user-circle"></i> Profile</a>
+                                <a routerLink="/a/{{accountName}}"><i class="fa fa-user-circle"></i> Profile</a>
                                 <a routerLink="/profile/track"><i class="fa fa-music" aria-hidden="true"></i> Track</a>
                                 <a href=""><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
                                 <a (click)="signOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
@@ -103,55 +103,41 @@
                         <!-- <div class="file">
                             <div id="yourBtn" class="up-btn" onclick="uploadFile()">Choose a file to upload</div>
                         </div> -->
-                        <div>
+                        <div id="yourBtn">
                             <label for="upfile"> Choose a file to upload</label>
                             <input type="file" id="upfile" accept="audio/x-mpeg"  (change)="handleFile($event)">
                         </div>
                     </div>
                     <div *ngIf="currentFile" class="progress my-3">
-                        <video [src]="url" *ngIf="url" height="200" controls></video> <br/>
-                        <div
+                        <!-- <div
                         class="progress-bar progress-bar-info progress-bar-striped"
                         role="progressbar"
                         attr.aria-valuenow="{{ progress }}"
                         aria-valuemin="0"
                         aria-valuemax="100"
-                        [ngStyle]="{ width: progress + '%' }"
-                        >
+                        [ngStyle]="{ width: progress + '%' }">
                         {{ progress }}%
+                        </div> -->
+                        {{ currentFile.name }}
                     </div>
-                </div>
-                <div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>
-                
-                <div class="card mt-3">
-                    <div class="card-header">List of Files</div>
-                    <ul class="list-group list-group-flush" *ngFor="let file of selectedFiles | async">
-                        <li class="list-group-item">
-                            <a href="{{ currentFile?.name }}">{{ currentFile?.name }}</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="meta">
-                    <div class="process">
-                        <div class="bar"></div >
-                            <div class="percent">0%</div >
-                            </div>
-                            <div class="col-md-12" style="display: flex;">
-                                <div class="up-img col-md-6">
-                                    <img id="imageSong" src="assets/images/default-upload-image.jpg" alt="">
-                                    
-                                    <div>
-                                        <label for="file">>Update Image</label>
-                                        <!-- <div id="btn-image" type="submit" onclick="uploadImage()">&#xf147; <span>Update Image</span></div> -->
-                                        <input type="file" name="image" id="upimage" (change)="handleFileImage($event)" accept="image/jpeg, image/png, image/jpg"/>
-                                    </div>
+                    <div *ngIf="message" >{{ message }}</div>
+                    <div class="meta">
+                        <div class="col-md-12" style="display: flex;">
+                            <div class="up-img col-md-6">
+                                <img id="imageSong" src="assets/images/default-upload-image.jpg" *ngIf="!url" >
+                                <img [src]="url" *ngIf="url" height="200" controls>
+                                
+                                <div id="btn-image">
+                                    <label for="upimage">Update Image</label>
+                                    <!-- <div id="btn-image" type="submit" onclick="uploadImage()">&#xf147; <span>Update Image</span></div> -->
+                                    <input type="file" name="image" id="upimage" (change)="handleFileImage($event)" accept="image/jpeg, image/png, image/jpg"/>
                                 </div>
-                                <form [formGroup]="form" (ngSubmit)="submit()">
+                            </div>
+                            <form [formGroup]="form" (ngSubmit)="submit()">
 
                                 <div class="infometa col-md-6 " >
                                     <label for="">Title</label>
                                     <input type="text" formControlName="title" id="title">
-                                    <label for="">Vocals</label>
                                     <label for="">Tags</label>
                                     <select formControlName="tag">
                                             <option value="DANCE">Dance</option>
@@ -166,13 +152,13 @@
                                     <input type="submit" value="Upload">
                                 </div>
                             </form>
-                            </div>
                         </div>
                     </div>
-                <div class="im">
-                        <p>Important: By sharing, you confirm that your sounds comply with our Terms of use and you don’t infringe anyone else’s rights. If in doubt, check our Copyright information pages and FAQs before uploading.</p>
-                        <p>Problems uploading? Please <a href="contact.html">contact us</a></p>
-                        <p>What types of files can I upload? You can upload AIFF, WAVE (WAV), FLAC, ALAC, OGG, MP2, MP3, AAC, AMR, and WMA files. The maximum file size is 5GB.</p>
+                    <div class="im">
+                            <p>Important: By sharing, you confirm that your sounds comply with our Terms of use and you don’t infringe anyone else’s rights. If in doubt, check our Copyright information pages and FAQs before uploading.</p>
+                            <p>Problems uploading? Please <a href="contact.html">contact us</a></p>
+                            <p>What types of files can I upload? You can upload AIFF, WAVE (WAV), FLAC, ALAC, OGG, MP2, MP3, AAC, AMR, and WMA files. The maximum file size is 5GB.</p>
+                    </div>
                 </div>
             </div>
         </div>

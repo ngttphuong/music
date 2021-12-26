@@ -3,6 +3,7 @@ package com.collection.music.mapper;
 import org.mapstruct.Mapper;
 
 import com.collection.music.dto.SongDto;
+import com.collection.music.dto.UploadFileDto;
 import com.collection.music.model.Song;
 
 @Mapper(componentModel = "spring")
