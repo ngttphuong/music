@@ -1,0 +1,286 @@
+
+	 <div class="" id="con">
+         <div class="bottom">
+            <div class="listen-song">
+            	<div class="listen">
+            		<div class="title-song">
+            			<span class="namesong">Something Just Like This</span><span class="namesong"> - </span><a href="" class="namesong">The Chainsmokers, Coldplay</a>
+            			<br><span class="type">Album: </span><a href="" class="type">Memories...Do Not Open</a>
+            			<br><span class="type">Tags: </span><a href="" class="type">Dance</a>
+            		</div>
+            		<div class="player">
+            			<audio id="myMusic">
+            				<source src="assets/data/Something%20Just%20Like%20This%20The%20Chainsmokers,%20Coldplay%20Lyric%20_%20JEW6ZpDwUin8.mp3" type="audio/mp3">
+            			</audio>
+            			<div class="action-player" >
+            			    <div class="img-player"><img src="assets/images/default-upload-image.jpg" alt=""></div>
+            				<div class="player-controls">
+								<div id="timeline">
+									<div id="processtime"><div id="playhead1"></div></div>
+								</div>
+            					<button id="bplay" (click)="play()"><i id="icon" class="fa fa-play" aria-hidden="true"></i></button>
+            					<button id="bpre" ><i id="repeat" class="fa fa-repeat" aria-hidden="true"></i></button>
+            					<span id="currentTime">0:00</span>
+            					/ <span id="fullDuration">0:00</span>
+            					
+            					<button id="bmute"><i id="mute" class="fa fa-volume-up" aria-hidden="true"></i></button>
+            					<div class="volume" title="Set Volume">
+            						<span id="volumeBar" class="volumeBar"></span>
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+            		<div class="info">
+            			<div class="user">
+            				<div class="img-user">
+            					<img src="assets/images/acc.jpg" alt="">
+            				</div>
+            				<div class="info-user">
+            					<span class="username">Võ Ngọc Quốc</span>
+            					<br><span><i class="fa fa-user" aria-hidden="true"></i></span><span> 112 </span><span><i class="fa fa-heart" aria-hidden="true"></i></span><span> 232</span>
+            				</div>
+            				<div class="follow"><button>Follow</button></div>
+            			</div>
+            			<div class="comment">
+            				<div class="user-cmt">
+            					<div class="image-uc"><img src="assets/images/acc.jpg" alt=""></div>
+            					<div class="cmt">
+            					<input type="text" placeholder="Write a comment">
+            					</div>
+            				</div>
+            				<div class="btn-action">
+            					<button id="btn-like" onclick="liked()"><i class="fa fa-heart" aria-hidden="true"></i> Like</button>
+            					<button><i class="fa fa-share-square-o" aria-hidden="true"></i> Share</button>
+            					<button><i class="fa fa-plus-square" aria-hidden="true"></i> Add  to playlist</button>
+            					<button><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+            				</div>
+            				<div class="count">
+            					<span><i class="fa fa-play" aria-hidden="true"></i> 1234</span>
+								<span><i class="fa fa-heart" aria-hidden="true"></i> <span id="count-like">100</span></span>
+           						<span><i class="fa fa-download" aria-hidden="true"></i> 80</span>
+            				</div>
+            				<div class="des-song" id="des-song">
+            					<p>
+            					The Chainsmokers debut album 'Memories... Do Not Open' is out now! 
+								Buy & Stream: http://smarturl.it/TCSMemories
+								Physical CD: http://smarturl.it/TCSMemoriesCD
+								Vinyl LP: http://smarturl.it/TCSMemoriesVinyl
+								<br>
+								DIRECTOR: James Zwadlo // (Instagram: jzwadlo)
+								PRODUCERS: Ariyan Samarbaksh & James Zwadlo
+								<br>
+								Post:
+								EDITORS - James Zwadlo
+								COMPOSITING - James Zwadlo
+								<br>
+								ANIMATORS:
+								James Zwadlo (Lead)
+								Elliot Howard
+								David Byrne
+								Max Italiaander
+								Ned Jackson
+								Abi Tomasiewicz
+								John Matta
+								Max Volt Productions
+								<br>
+								Produced by:
+								Whitecoat - http://whitecoat.tv
+								Impossible Brief - http://impossiblebrief.com
+								<br>
+								Follow The Chainsmokers:
+								http://www.youtube.com/thechainsmokers 
+								http://www.twitter.com/thechainsmokers 
+								http://www.facebook.com/thechainsmokers 
+								http://www.instagram.com/thechainsmokers 
+								http://www.soundcloud.com/thechainsmo...
+								<br>
+								Follow Coldplay: 
+								http://coldplay.com/
+								https://www.facebook.com/coldplay/
+								https://twitter.com/coldplay
+								https://www.instagram.com/coldplay
+								https://www.youtube.com/coldplay
+           						</p>
+            				</div>
+            				<div class="show"><span onclick="openDes()" id="more">Show more</span><span onclick="closeDes()" id="less">Show less</span>
+            				</div>
+            				<div class="count-conver">
+            				<span class="count-cmt">
+           						<i class="fa fa-comments" aria-hidden="true"></i>
+           						<span>1</span><span> Comment</span>
+            				</span>
+            				</div>
+            				<div class="conver">
+            					<div class="user-comment">
+            						<div class="image-uc"><img src="assets/images/acc.jpg" alt=""></div>
+            						<div class="cmt">
+            							<a href="" id="username">{{accountName}}</a><span class="at"> at</span>
+            							<span>8:00 am</span>
+            							<p>Nice! I like this song</p>
+            							<span class="timeline">1 day</span>
+            							<button class="reply"><i class="fa fa-reply" aria-hidden="true"></i> Reply</button>
+            						</div>
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            	<div class="relate">
+            		<div class="tracks">
+            			<div class="title-relate">
+            				<div id="tit"><span>Relate Tracks</span></div>
+            				<div id="en"><a href=""><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></div>
+            			</div>
+            			<div class="sub-song">
+            				<div class="img-song"><div class="ia"><img src="assets/images/2.jpg" alt=""><button><i class="fa fa-play" aria-hidden="true"></i></button></div></div>
+            				<div class="des-song">
+								<a href=""><p>Closer</p></a>
+            					<a href="" id="art"><p>The Chainsmokers</p></a>
+            					<div class="count">
+									<span><i class="fa fa-play" aria-hidden="true"></i> 1234</span>
+									<span><i class="fa fa-heart" aria-hidden="true"></i> 100</span>
+									<span><i class="fa fa-download" aria-hidden="true"></i> 80</span>
+									<span>
+										<i class="fa fa-comments" aria-hidden="true"></i>
+										22
+									</span>
+								</div>
+           						<div class="btnsong">
+                     				<div class="action">
+                      				<button title="Like"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                      				<button title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
+                      				<button title="Add to playlist"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                      				<button title="Download"><i class="fa fa-download" aria-hidden="true"></i></button>
+                      				</div>
+                      			</div>
+            				</div>
+            			</div>
+            			<div class="sub-song">
+            				<div class="img-song"><div class="ia"><img src="assets/images/3.jpg" alt=""><button><i class="fa fa-play" aria-hidden="true"></i></button></div></div>
+            				<div class="des-song">
+								<a href=""><p>Say You Won't Let Go</p></a>
+            					<a href="" id="art"><p>James Arthur</p></a>
+            					<div class="count">
+									<span><i class="fa fa-play" aria-hidden="true"></i> 1234</span>
+									<span><i class="fa fa-heart" aria-hidden="true"></i> 100</span>
+									<span><i class="fa fa-download" aria-hidden="true"></i> 80</span>
+									<span>
+										<i class="fa fa-comments" aria-hidden="true"></i>
+										22
+									</span>
+								</div>
+           						<div class="btnsong">
+                     				<div class="action">
+                      				<button title="Like"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                      				<button title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
+                      				<button title="Add to playlist"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                      				<button title="Download"><i class="fa fa-download" aria-hidden="true"></i></button>
+                      				</div>
+                      			</div>
+            				</div>
+            			</div>
+            			<div class="sub-song">
+            				<div class="img-song"><div class="ia"><img src="assets/images/6.jpg" alt=""><button><i class="fa fa-play" aria-hidden="true"></i></button></div></div>
+            				<div class="des-song">
+								<a href=""><p>All We Know</p></a>
+            					<a href="" id="art"><p>The Chainsmokers ft Phoebe Ryan</p></a>
+            					<div class="count">
+									<span><i class="fa fa-play" aria-hidden="true"></i> 1234</span>
+									<span><i class="fa fa-heart" aria-hidden="true"></i> 100</span>
+									<span><i class="fa fa-download" aria-hidden="true"></i> 80</span>
+									<span>
+										<i class="fa fa-comments" aria-hidden="true"></i>
+										22
+									</span>
+								</div>
+           						<div class="btnsong">
+                     				<div class="action">
+                      				<button title="Like"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                      				<button title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
+                      				<button title="Add to playlist"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                      				<button title="Download"><i class="fa fa-download" aria-hidden="true"></i></button>
+                      				</div>
+                      			</div>
+            				</div>
+            			</div>
+            		</div>
+            		<div class="tracks">
+            			<div class="title-relate">
+            				<div id="tit"><span>In playlist</span></div>
+            				<div id="en"><a href=""><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></div>
+            			</div>
+            			<div class="sub-song">
+            				<div class="img-song"><div class="ia"><img src="assets/images/sub3.jpg" alt=""><button><i class="fa fa-play" aria-hidden="true"></i></button></div></div>
+            				<div class="des-song">
+								<a href=""><p>In Too Deep</p></a>
+            					<a href="" id="art"><p>The Naked Hero</p></a>
+            					<div class="count">
+									<span><i class="fa fa-play" aria-hidden="true"></i> 1234</span>
+									<span><i class="fa fa-heart" aria-hidden="true"></i> 100</span>
+									<span><i class="fa fa-download" aria-hidden="true"></i> 80</span>
+									<span>
+										<i class="fa fa-comments" aria-hidden="true"></i>
+										22
+									</span>
+								</div>
+           						<div class="btnsong">
+                     				<div class="action">
+                      				<button title="Like"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                      				<button title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
+                      				<button title="Download"><i class="fa fa-download" aria-hidden="true"></i></button>
+                      				</div>
+                      			</div>
+            				</div>
+            			</div>
+            			<div class="sub-song">
+            				<div class="img-song"><div class="ia"><img src="assets/images/sub5.jpg" alt=""><button><i class="fa fa-play" aria-hidden="true"></i></button></div></div>
+            				<div class="des-song">
+								<a href=""><p>Shura Nothing's Real</p></a>
+            					<a href="" id="art"><p>Various Artists</p></a>
+            					<div class="count">
+									<span><i class="fa fa-play" aria-hidden="true"></i> 1234</span>
+									<span><i class="fa fa-heart" aria-hidden="true"></i> 100</span>
+									<span><i class="fa fa-download" aria-hidden="true"></i> 80</span>
+									<span>
+										<i class="fa fa-comments" aria-hidden="true"></i>
+										22
+									</span>
+								</div>
+           						<div class="btnsong">
+                     				<div class="action">
+                      				<button title="Like"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                      				<button title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
+                      				<button title="Download"><i class="fa fa-download" aria-hidden="true"></i></button>
+                      				</div>
+                      			</div>
+            				</div>
+            			</div>
+            			<div class="sub-song">
+            				<div class="img-song"><div class="ia"><img src="assets/images/sub9.jpg" alt=""><button><i class="fa fa-play" aria-hidden="true"></i></button></div></div>
+            				<div class="des-song">
+								<a href=""><p>Nameless</p></a>
+            					<a href="" id="art"><p>Heroes</p></a>
+            					<div class="count">
+									<span><i class="fa fa-play" aria-hidden="true"></i> 1234</span>
+									<span><i class="fa fa-heart" aria-hidden="true"></i> 100</span>
+									<span><i class="fa fa-download" aria-hidden="true"></i> 80</span>
+									<span>
+										<i class="fa fa-comments" aria-hidden="true"></i>
+										22
+									</span>
+								</div>
+           						<div class="btnsong">
+                     				<div class="action">
+                      				<button title="Like"><i class="fa fa-heart" aria-hidden="true"></i></button>
+                      				<button title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
+                      				
+                      				<button title="Download"><i class="fa fa-download" aria-hidden="true"></i></button>
+                      				</div>
+                      			</div>
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+           </div>
+    </div>

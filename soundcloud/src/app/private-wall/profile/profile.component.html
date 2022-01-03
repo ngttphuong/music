@@ -1,0 +1,109 @@
+
+
+<div class="">
+        <div class="profile">
+            <div class="profile-image">
+                <div class="p-img">
+                    <img id="imageSong" *ngIf="!url" src="assets/images/acc.jpg" alt="">
+                    <img id="imageSong" [src]="url" *ngIf="url">
+                    <label for="upimage">
+                        <span><i class="fa fa-picture-o" aria-hidden="true"></i> Update Image</span>
+                    </label>
+                    <input type="file" name="image" id="upimage" (change)="readURL($event);" accept="image/jpeg, image/png, image/jpg" hidden/>
+                </div>
+                <div class="change-work">
+                    <span id="pro-select" class="work-select" onclick="changeprofile()">Profile</span>
+                    <span id="track-select" onclick="changetrack()">Track</span>
+                </div>
+            </div>
+            <div class="profile-info">
+                <div id="f-profile" class="work f-profile">
+                    <p class="title-profile">Profile</p>
+                    <div class="alert aler-success" *ngIf="message">{{message}}</div>
+                    <div class="pro" id="sig-cre">
+            <form id="signin" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="cs">
+                    <label for="username">Username</label>
+                    <input type="text"  formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Name is required</div>
+                    </div>
+                    <label for="">Gender</label>
+                    <select formControlName="gender">
+                        <option value="false">Female</option>
+                        <option value="fa-twitter-square">Male</option>
+                    </select><br> <br> 
+                    <label for="phone">Phone Number</label>
+                    <input type="text"  formControlName="phoneNumber">
+                    <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                        <div *ngIf="f.phoneNumber.errors.required">Name is required</div>
+                    </div>
+                    <label for="address">Address</label>
+                    <input type="text"  formControlName="address" >
+                    <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <div *ngIf="f.address.errors.required">Name is required</div>
+                    </div>
+                    <br>
+                    <button type="submit">Update</button>
+                </div>
+                
+            </form>
+        </div>
+                </div>
+                <div id="f-track" class="work f-track">
+                    <p>Track</p>
+                    <div class="all-uptrack">
+                        <div class="single-track">
+                            <img src="assets/images/2.jpg" alt="">
+                            <button><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <a>Closer</a>
+                            <br>
+                            <span>The Chainsmokers</span>
+                        </div>
+                        <div class="single-track">
+                            <img src="assets/images/2.jpg" alt="">
+                            <button><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <a>Closer</a>
+                            <br>
+                            <span>The Chainsmokers</span>
+                        </div>
+                        <div class="single-track">
+                            <img src="assets/images/2.jpg" alt="">
+                            <button><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <a>Closer</a>
+                            <br>
+                            <span>The Chainsmokers</span>
+                        </div>
+                        <div class="single-track">
+                            <img src="assets/images/2.jpg" alt="">
+                            <button><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <a>Closer</a>
+                            <br>
+                            <span>The Chainsmokers</span>
+                        </div>
+                        <div class="single-track">
+                            <img src="assets/images/2.jpg" alt="">
+                            <button><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <a>Closer</a>
+                            <br>
+                            <span>The Chainsmokers</span>
+                        </div>
+                        <div class="single-track">
+                            <img src="assets/images/2.jpg" alt="">
+                            <button><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <a>Closer</a>
+                            <br>
+                            <span>The Chainsmokers</span>
+                        </div>
+                        <div class="single-track">
+                            <img src="assets/images/2.jpg" alt="">
+                            <button><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <a>Closer</a>
+                            <br>
+                            <span>The Chainsmokers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

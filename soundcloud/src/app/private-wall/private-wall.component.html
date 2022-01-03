@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="header">
+    <div class="menu"></div>
+    <div class="account">
+
+        <div *ngIf="!isActived" class="notlogin">
+             <a href="createaccount.html" class="c">Create account</a>
+             <a href="login.html" class="s">Sign in</a>
+        </div>
+
+         <div *ngIf="isActived" class="acclogin">
+             <div class="imgacc"><img src="assets/images/acc.jpg" alt=""></div>
+             <div class="accname"><p>{{accountName}}</p></div>
+             <div class="navi">
+                 <input type="checkbox" id="menuacc" name="" value="" class="hidden"/>
+                 <div class="a">
+                    <div class="o">
+                     <label for="menuacc" class=""><i class="fa fa-sort-desc" aria-hidden="true"></i></label>
+                    </div>
+                     <div class="navacc">
+                         <a routerLink="/a/{{accountName}}"><i class="fa fa-user-circle"></i> Profile</a>
+                         <a routerLink="/profile/track"><i class="fa fa-music" aria-hidden="true"></i> Track</a>
+                         <a href=""><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
+                         <a (click)="signOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+        <div>
+        <input type="checkbox" id="slide" name="" value="" class="hidden"/>
+            <div class="con">
+            <label for="slide" class="toggle">
+            <div class="nav">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                </div>
+            </label>
+            <div class="sidebar"> 
+                <a routerLink="/discover"> Home </a>
+                <a href="#"> Charts </a>
+                <a href="#"> Blogs </a>
+                <a href="#"> About us </a>
+                <a href="#"> Contact us </a>
+            </div>  
+            <div class="maintext">
+            <div id="continput">
+                <div id="input-group">
+                    <form action="">
+                        <input type="text" id="searchtext" placeholder="Search...">
+                        <button id="icon-src"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <a routerLink="/upload">Upload</a>
+            </div>
+            </div>
+        </div>          
+        </div>
+    </div>
+    <div class="bottom">
+        <router-outlet></router-outlet>
+    <div class="footer">
+        <div class="social">
+        <p class="site"><u>Site map</u></p>
+        <div class="sitemap">
+            <a routerLink="/discover">Home</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact us</a>
+            <a href="">Blogs</a>
+            <a href="">Charts</a>
+            <a routerLink="/sign-in">Sign in</a>
+        </div>
+        <div class="both">
+            <a href=""><div class="icon facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></div></a>
+            <a href="#"><div class="icon twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></div></a>
+            <a href="https://www.instagram.com/thoaiho2/"><div class="icon instagram"><i class="fa fa-instagram" aria-hidden="true"></i></div></a>
+        </div>
+        <p>@2021 TP Design & Development</p>
+    </div>
+</div>
+</div>
+
